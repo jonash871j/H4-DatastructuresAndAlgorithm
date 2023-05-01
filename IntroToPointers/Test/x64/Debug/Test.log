@@ -1,0 +1,2 @@
+﻿  main.c
+C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\Test\main.c(7): error C4789: buffer 'test' of size 40 bytes will be overrun; 4 bytes will be written starting at offset 40

@@ -1,0 +1,4 @@
+﻿  main.c
+C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\Task5\main.c(16,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\Task5\main.c(17,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Task5.vcxproj -> C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\x64\Debug\Task5.exe

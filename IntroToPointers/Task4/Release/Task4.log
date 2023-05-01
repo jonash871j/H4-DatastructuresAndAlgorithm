@@ -1,0 +1,7 @@
+﻿  main.c
+C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\Task4\main.c(51,2): warning C4013: 'gets' undefined; assuming extern returning int
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Task4.vcxproj -> C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\Release\Task4.exe

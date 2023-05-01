@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\Task2\main.c(7,20): warning C4018: '<': signed/unsigned mismatch
+  Task2.vcxproj -> C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\Debug\Task2.exe

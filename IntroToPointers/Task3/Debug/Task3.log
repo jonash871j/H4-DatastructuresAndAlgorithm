@@ -1,0 +1,3 @@
+﻿cl : command line  warning D9025: overriding '/sdl' with '/GS-'
+  main.c
+  Task3.vcxproj -> C:\Users\jonas.hansen\source\repos\IndoeNavi-Systems\IndoNavi-API\src\Test\Debug\Task3.exe
