@@ -31,7 +31,7 @@ int CountWords(const char* str)
 
 void main()
 {
-	const char* str = "This is a test on how many words there are.\0";
+	const char* str = "This is a test on how many words there     are.\nThis ";
 	int wordAmount = CountWords(str);
 	printf("There is %i words in this sentence: %s\n", wordAmount, str);
 }

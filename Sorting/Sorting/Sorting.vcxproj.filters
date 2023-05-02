@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.c" />
+    <ClCompile Include="stopwatch.c" />
+    <ClCompile Include="sorting.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stopwatch.h" />
+    <ClInclude Include="sorting.h" />
+  </ItemGroup>
+</Project>
