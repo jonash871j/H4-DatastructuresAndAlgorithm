@@ -3,63 +3,35 @@
 #include "stopwatch.h"
 #include "sorting.h"
 
-#define NUMBER_SIZE 20000
+#define NUMBER_SIZE 100000
 
-void GenerateArrayWithRandomNumbers(int** numberArray, int size)
+void TestSortingAlgorithm(const char* name, void(*SortAlgorithmCallback)(int* numbers, int size))
 {
-    if (*numberArray != NULL)
+    Stopwatch stopwatch;
+    int* randomNumbers = (int*)malloc(NUMBER_SIZE * sizeof(int));
+    for (int i = 0; i < NUMBER_SIZE; i++)
     {
-        free(*numberArray);
+        randomNumbers[i] = rand() % 100;
     }
-    int* newNumberArray = malloc(size * sizeof(int));
 
-    for (int i = 0; i < size; i++)
-    {
-        newNumberArray[i] = rand() % 100;
-    }
-    *numberArray = newNumberArray;
-}
+    Stopwatch_Start(&stopwatch);
+    SortAlgorithmCallback(randomNumbers, NUMBER_SIZE);
+    Stopwatch_Stop(&stopwatch);
+    printf("\n%s finished sorting in %lf seconds with %i random numbers.\n", name, stopwatch.seconds, NUMBER_SIZE);
 
-void PrintResults(const char* title, Stopwatch* stopwatch)
-{
-    printf("%s finished sorting in %lf seconds with %i random numbers.\n", title, stopwatch->seconds, NUMBER_SIZE);
-}
+    Stopwatch_Start(&stopwatch);
+    SortAlgorithmCallback(randomNumbers, NUMBER_SIZE);
+    Stopwatch_Stop(&stopwatch);
+    printf("Already sorted %s finished sorting in %lf seconds with %i random numbers.\n", name, stopwatch.seconds, NUMBER_SIZE);
 
-void PrintNumbers(int* numbers, int size)
-{
-    for (int i = 0; i < size; i++)
-    {
-        printf("%i, ", numbers[i]);
-    }
-    printf("\n");
+    free(randomNumbers);
 }
 
 void main()
 {
-    Stopwatch stopwatch;
-    int* randomNumbers = NULL;
-
-    GenerateArrayWithRandomNumbers(&randomNumbers, NUMBER_SIZE);
-    Stopwatch_Start(&stopwatch);
-    BubbleSort(randomNumbers, NUMBER_SIZE);
-    Stopwatch_Stop(&stopwatch);
-    PrintResults("Bubblesort", &stopwatch);
-
-    GenerateArrayWithRandomNumbers(&randomNumbers, NUMBER_SIZE);
-    Stopwatch_Start(&stopwatch);
-    SlectionSort(randomNumbers, NUMBER_SIZE);
-    Stopwatch_Stop(&stopwatch);
-    PrintResults("Selectionsort", &stopwatch);
-
-    GenerateArrayWithRandomNumbers(&randomNumbers, NUMBER_SIZE);
-    Stopwatch_Start(&stopwatch);
-    InsertionSort(randomNumbers, NUMBER_SIZE);
-    Stopwatch_Stop(&stopwatch);
-    PrintResults("Insertionsort", &stopwatch);
-
-    GenerateArrayWithRandomNumbers(&randomNumbers, NUMBER_SIZE);
-    Stopwatch_Start(&stopwatch);
-    MergeSort(randomNumbers, NUMBER_SIZE);
-    Stopwatch_Stop(&stopwatch);
-    PrintResults("Mergesort", &stopwatch);
+    TestSortingAlgorithm("BubbleSort", BubbleSort);
+    TestSortingAlgorithm("SlectionSort", SlectionSort);
+    TestSortingAlgorithm("InsertionSort", InsertionSort);
+    TestSortingAlgorithm("MergeSort", MergeSort);
+    TestSortingAlgorithm("QuickSort", QuickSort);
 }
